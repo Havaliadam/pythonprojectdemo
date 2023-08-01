@@ -1,0 +1,20 @@
+#kume={"mert","ayhan","mert","ali"}
+#print(type(kume))
+#a=set(["mert","ayhan","youtube","udemy","ayhan"])
+#print(a)
+#yazi="ayhan mühendis olacak"
+#print(set(yazi))
+#print(dir(yazi))
+#kume={"mert","ela",40,10.2,1,2,3,4,5}
+#kume.add("ayhan")
+#kume.discard("ayhan")
+#print(kume)
+a={1,2,3,4,5,6}
+b={4,5,6,7,8,9,10}
+#print(a.difference_update(b))
+#print(a)
+#print(b)
+#print(a.intersection(b))
+#print(a.isdisjoint(b))
+#print(a.issubset(b))
+#print(a.union(b))

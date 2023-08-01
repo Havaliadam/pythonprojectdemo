@@ -1,0 +1,127 @@
+import    sqlite3
+
+con  = sqlite3.connect("kütüphane1.db")
+
+cursor = con.cursor()
+def tablo_olustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS kitaplıik(İsim TEXT,Yazar TEXT,Yayinevi TEXT,Sayfa_sayisi INT)")
+    con.commit()
+
+    tablo_olsutur()
+
+def veri_ekle():
+   cursor.execute("insert into kitaplik values ('istanul hatırasi','ahmet ümit','everenst',561 )")
+con.commit()
+veri_ekle()
+
+con.close()
+
+
+import sqlite3 
+
+con = sqlite3.connect("kütüphane1.db")
+
+cursor = con.cursor() 
+
+def tablo_oluştur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS kitaplık (İsim TEXT, Yazar TEXT, Yayınevi TEXT, Sayfa_Sayısı INT)") 
+    con.commit()
+def deger_ekle(isim,yazar,yayınevi,sayfa_sayısı):
+    cursor.execute("INSERT INTO kitaplık VALUES(?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı))
+    con.commit()
+isim = input("İsim:")
+yazar = input("Yazar:")
+yayınevi = input("Yayınevi:")
+sayfa_sayısı =  int(input("Sayfa Sayısı:"))
+
+
+deger_ekle(isim,yazar,yayınevi,sayfa_sayısı)
+
+con.close()
+
+
+
+import sqlite3
+
+con = sqlite3.connect("kütüphane.db")
+
+cursor = con.cursor()
+def tablo_olustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS kitaplık (İsim TEXT,Yazar TEXT,Yayınevi TEXT,Sayfa_Sayısı INT)")
+    con.commit()
+def deger_ekle(isim,yazar,yayınevi,sayfa_sayısı):
+    cursor.execute("Insert into kitaplık Values(?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı))
+    con.commit()
+def verileri_al():
+    cursor.execute("Select * From kitaplık") # Bütün bilgileri alıyoruz.
+    data = cursor.fetchall() # Veritabanından bilgileri çekmek için fetchall() kullanıyoruz.
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+    # con.commit() işlemine gerek yok. Çünkü tabloda herhangi bir güncelleme yapmıyoruz.
+verileri_al()
+con.close()
+
+
+import sqlite3
+
+con = sqlite3.connect("kütüphane1.db")
+
+cursor = con.cursor()
+def tablo_olustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS kitaplık (İsim TEXT,Yazar TEXT,Yayınevi TEXT,Sayfa_Sayısı INT)")
+    con.commit()
+def deger_ekle(isim,yazar,yayınevi,sayfa_sayısı):
+    cursor.execute("Insert into kitaplık Values(?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı))
+    con.commit()
+def verileri_al():
+    cursor.execute("Select * From kitaplık")
+    data = cursor.fetchall()
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+def verileri_al2():
+    cursor.execute("Select İsim,Yazar From kitaplık") # Sadece İsim ve Yazar özelliklerini alıyoruz.
+    data = cursor.fetchall()
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+verileri_al2()
+con.close()
+
+
+import sqlite3
+
+con = sqlite3.connect("kütüphane1.db")
+
+cursor = con.cursor()
+def tablo_olustur():
+    cursor.execute("CREATE TABLE IF NOT EXISTS kitaplık (İsim TEXT,Yazar TEXT,Yayınevi TEXT,Sayfa_Sayısı INT)")
+    con.commit()
+def deger_ekle(isim,yazar,yayınevi,sayfa_sayısı):
+    cursor.execute("Insert into kitaplık Values(?,?,?,?)",(isim,yazar,yayınevi,sayfa_sayısı))
+    con.commit()
+def verileri_al():
+    cursor.execute("Select * From kitaplık")
+    data = cursor.fetchall()
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+def verileri_al2():
+    cursor.execute("Select İsim,Yazar From kitaplık")
+    data = cursor.fetchall()
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+def verileri_al3(yayınevi):
+    cursor.execute("Select * From kitaplık where Yayınevi = ?",(yayınevi,)) # Sadece yayınevi ,Everest olan kitapları alıyoruz.
+    data = cursor.fetchall()
+    print("Kitaplık Tablosunun bilgileri.....")
+    for i in data:
+        print(i)
+verileri_al3("Everest")
+con.close()
+
+
+
+
